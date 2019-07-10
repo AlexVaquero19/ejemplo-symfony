@@ -9,6 +9,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+
 
 /**
  * @Route("/supplier")
@@ -17,6 +19,8 @@ class SupplierController extends AbstractController
 {
     /**
      * @Route("/", name="supplier_index", methods={"GET"})
+     *
+     * @IsGranted("IS_AUTHENTICATED_FULLY")
      */
     public function index(SupplierRepository $supplierRepository): Response
     {
@@ -27,6 +31,8 @@ class SupplierController extends AbstractController
 
     /**
      * @Route("/new", name="supplier_new", methods={"GET","POST"})
+     *
+     * @IsGranted("IS_AUTHENTICATED_FULLY")
      */
     public function new(Request $request): Response
     {
@@ -50,6 +56,8 @@ class SupplierController extends AbstractController
 
     /**
      * @Route("/{id}", name="supplier_show", methods={"GET"})
+     *
+     * @IsGranted("IS_AUTHENTICATED_FULLY")
      */
     public function show(Supplier $supplier): Response
     {
@@ -60,6 +68,8 @@ class SupplierController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="supplier_edit", methods={"GET","POST"})
+     *
+     * @IsGranted("IS_AUTHENTICATED_FULLY")
      */
     public function edit(Request $request, Supplier $supplier): Response
     {
@@ -82,6 +92,8 @@ class SupplierController extends AbstractController
 
     /**
      * @Route("/{id}", name="supplier_delete", methods={"DELETE"})
+     *
+     * @IsGranted("IS_AUTHENTICATED_FULLY")
      */
     public function delete(Request $request, Supplier $supplier): Response
     {
