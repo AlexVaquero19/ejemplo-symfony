@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
- * @Route("/product")
+ * @Route("/producto")
  */
 class ProductController extends AbstractController
 {
@@ -31,7 +31,7 @@ class ProductController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="product_new", methods={"GET","POST"})
+     * @Route("/nuevo", name="product_new", methods={"GET","POST"})
      *
      * @IsGranted("IS_AUTHENTICATED_FULLY")
      */
