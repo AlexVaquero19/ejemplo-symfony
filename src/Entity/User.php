@@ -48,6 +48,7 @@ class User extends BaseUser
         parent::__construct();
         $this->products = new ArrayCollection();
         $this->categories = new ArrayCollection();
+        $this->roles = array('ROLE_USER');
     }
 
     public function getName(): ?string
