@@ -23,6 +23,11 @@
                 <th>Price</th>
                 <td>{{ product.price }}</td>
             </tr>
+
+            <tr>
+                <th>Imagen</th>
+                <td><img src="{{ asset('images/products/' ~ product.imageName) }}" alt=""></td>
+            </tr>
         </tbody>
     </table>
 
