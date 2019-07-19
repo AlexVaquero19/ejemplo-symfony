@@ -16,7 +16,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
  * @Route("/pais")
- * @IsGranted("ROLE_SUPER_ADMIN")
  */
 class CountryController extends AbstractController
 {
@@ -33,6 +32,7 @@ class CountryController extends AbstractController
 
     /**
      * @Route("/new", name="country_new", methods={"GET","POST"})
+     * @IsGranted("ROLE_SUPER_ADMIN")
      */
     public function new(Request $request): Response
     {
@@ -66,6 +66,7 @@ class CountryController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="country_edit", methods={"GET","POST"})
+     * @IsGranted("ROLE_SUPER_ADMIN")
      */
     public function edit(Request $request, Country $country): Response
     {
@@ -88,6 +89,7 @@ class CountryController extends AbstractController
 
     /**
      * @Route("/{id}", name="country_delete", methods={"DELETE"})
+     * @IsGranted("ROLE_SUPER_ADMIN")
      */
     public function delete(Request $request, Country $country): Response
     {
